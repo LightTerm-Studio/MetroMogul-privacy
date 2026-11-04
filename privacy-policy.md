@@ -1,213 +1,208 @@
 # Metro Mogul Privacy Policy
 
-**Last updated:** November 1, 2026
+**Last updated:** November 4, 2026
 
 **Developer:** LightTerm Studio
-**Contact:** [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com)
 
----
+**Contact:** [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com)
 
 ## 1. Introduction and scope
 
-This Privacy Policy explains what information the game Metro Mogul handles, why, who it may be shared with, and the choices you have. It covers the Metro Mogul app and the online services that LightTerm Studio runs for it, such as accounts, cloud saves, and online rooms.
+This Privacy Policy explains how LightTerm Studio handles information in Metro Mogul (Android package: com.metromogul.game) and its online services, including purposes, recipients, retention, and your choices.
 
-Metro Mogul is an isometric property board game. You can play Single Player against bots, the Tutorial, and Pass & Play on one device as a Guest, without creating an account. Some features, including accounts, cloud saves, Online with Friends, ads, and in-app purchases, are optional or may not be available in every version.
-
-Metro Mogul is still being developed and tested. Which features are available can depend on the version, platform, region, and whether our online services are running. When this policy describes a feature, it applies only when that feature is available and you use it. This policy does not permit us to collect any data it does not describe.
+Metro Mogul offers Single Player against bots, Tutorial, Pass & Play on one device, and Online with Friends using a room code. Local saved games are not uploaded to our servers. They are separate from online match checkpoints stored on our servers.
 
 ## 2. Who operates Metro Mogul
 
-Metro Mogul is developed and operated by **LightTerm Studio**, the developer name we use. You can reach us at **lightdevs2005@gmail.com** about anything in this policy.
+Metro Mogul is developed and operated by **LightTerm Studio**. For privacy questions and support, contact [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com).
 
 ## 3. Information stored on your device
 
-Metro Mogul saves some information on your device so the game works and remembers your choices. This can include:
+The game stores information locally to work and remember your choices, including:
 
-- the Guest name or profile you choose
-- language setting
-- music and sound effect volume
-- animation preferences
-- theme and character choices
-- game progress, checkpoints, and saved games
-- records of content you own (an "entitlement" cache)
-- session information that keeps you signed in to online services
+- your Guest name and profile;
+- language, audio, and animation preferences;
+- theme and character selections;
+- progress, checkpoints, and local saved games;
+- cached content ownership information (an entitlement cache);
+- a random installation ID for redeem features; and
+- Guest session credentials and content access tokens.
 
-**What stays on your device:** Local play (Single Player, Tutorial, and Pass & Play) and your settings are saved on your device. Playing these modes as a Guest does not upload your saved games or settings to our servers.
+Guest session credentials and the entitlement cache use encrypted storage on your device. This does not mean all saved games or preferences are encrypted, or that local storage is completely protected.
 
-**What may be sent:** Some of this information is sent only when you use an online feature. For example, a cloud save is uploaded when you use cloud saving, and your display name and character are sent when you join an online room. Sections 4–7 explain this in more detail.
+Using online features can send relevant data described below, such as your player name and character when joining a room. Local play does not upload local saved games to the developer's servers.
 
-**Guest mode is not fully offline:** Even in Guest mode, the ads and purchase features described in Sections 6 and 7 may connect to Google when they are available.
+## 4. Guest identity and online connections
 
-Session credentials are kept in encrypted storage on your device. Other local data, such as saved games and preferences, may not be encrypted.
+The game does not offer email/password registration, Google login, social login, or single sign-on (SSO). The former email/password account and personal cloud save features are disabled; password recovery and personal cloud save uploads are not available.
 
-## 4. Optional accounts and cloud saves
+For online features, the server creates an internal Guest identity, user ID, and session token to recognize you and allow reconnection. This identity is not a Google account and does not require an email address.
 
-Accounts and cloud saves are optional and are available only when our account service is running. If you choose to register or sign in, our servers may process:
-
-| Information | Why |
-|---|---|
-| Email address | To identify your account and contact you about it if needed |
-| Display name | To show your name in the game and in online rooms |
-| Account identifier | To link your account to your saves and sessions |
-| Password | To create your account and sign you in. Your password is sent to our server when you register or sign in. The server stores a salted hash of it, not the password itself. |
-| Session tokens / session information | To keep you signed in |
-| Cloud save data, including checkpoints and the appearance choices saved with them | To store and restore your progress across devices |
-| Cloud save update times and revision numbers | To keep track of the newest version of your save and prevent conflicts |
-
-Cloud saves are uploaded only when you use the cloud save feature. Offline progress is not automatically uploaded unless you save it to the cloud.
-
-The account service does not currently offer email verification, password recovery, or multi-factor authentication. Use a password that you do not use anywhere else.
+**Guest does not mean fully offline:** AdMob, purchases, purchase restoration, multiplayer, and redeem features can communicate with the relevant services.
 
 ## 5. Online multiplayer
 
-When you play **Online with Friends**, you create or join a private room using a room code. To run the match, our servers may process:
+When you create or join an Online with Friends room, the server can process and store:
 
-- your user or session identifier
-- your display name
-- the room code and who is in the room
-- your character and appearance choices
-- your ready status and connection status
-- the map and match settings
-- match state and checkpoints
-- turns, game actions, and commands
-- match results
+- Guest IDs and session information;
+- player names, room codes, and room membership;
+- characters and appearance choices needed for the match;
+- ready and connection status;
+- maps and match settings;
+- turns, game actions, commands, checkpoints, and match results; and
+- temporary visual data used to show movement and minigames to spectators.
 
-**What other players see:** Other players in your room can see what the match needs, such as your display name, your character, your game status, and the actions you take in the game. They cannot see your email address, password, or sign-in tokens.
+Production connections use HTTPS and secure WebSockets (WSS). Match and session data that need to persist are stored in **PostgreSQL** so they can be recovered after a server restart. Stored checkpoints are distinct from temporary visual frames; not every animation frame is saved.
 
-Metro Mogul does not currently have public chat, voice chat, contact list access, friend lists built from your contacts, or photo uploads.
+**Other players in your room** can see your name, character, status, and relevant game actions. They do not receive your session tokens or purchase evidence. The game has no public chat, private chat, voice chat, photo uploads, or contact list access.
 
-**IP address:** When your device connects to our servers, they receive its IP address. We use it to limit excessive requests and to protect sign-in from abuse. We do not use it to track your precise location.
+The server and infrastructure providers receive connection information such as IP addresses. This information can be used to operate the service, limit requests, and address abuse. We do not use it for GPS or precise location tracking.
 
-## 6. Advertising and privacy choices
+## 6. Redeem and access codes
 
-When ads are available, the Android version of Metro Mogul uses **Google AdMob** (the Google Mobile Ads SDK) to show ads, and Google's **User Messaging Platform** to ask for and manage privacy choices. The ad formats we are developing or testing include:
+You can choose to redeem a code to unlock certain maps or themes. These codes control content access; they do not provide an ad-free feature.
 
-- full-screen (interstitial) ads after a match ends
-- banner ads in a dedicated area of the screen
-- native ads shown in an overlay
+When you redeem a code or the app checks that access, information sent and potentially stored includes:
 
-During development, we use Google's test ads. Even with test ads, the SDK still runs and may process data as described below.
+- the random installation ID generated by the app;
+- your Guest ID and player name;
+- platform or operating system and device model;
+- the reference to the redeemed code or promotion;
+- the list of content granted;
+- redemption time and the most recent access-check activity;
+- access status, including active or revoked; and
+- access tokens needed to check your entitlement (permission to use content).
 
-**What Google may process:** According to Google's documentation for the Mobile Ads SDK, when the SDK is used, Google may collect:
+The installation ID is **not an IMEI, phone number, or device serial number**.
 
-- **IP address**, which may be used to estimate your general location
-- **Device and account identifiers**, such as the Android advertising ID, app set ID, and, where applicable, identifiers tied to accounts signed in on the device
-- **Interactions with the app and ads**, such as app launches, taps, and video views
-- **Diagnostic information**, such as app and SDK performance and errors
+We use this information to grant and maintain content access, check validity, manage redemption limits, prevent abuse, handle support, and revoke access when needed. The developer can view redeem records through a restricted administration dashboard. After redemption, the app can check access status again when used.
 
-Google uses this data for purposes such as delivering ads, personalizing ads (where allowed), measuring ads, analytics related to its ad services, limiting how often you see an ad, and security and fraud prevention, including detecting invalid traffic. Google says data collected by the SDK is encrypted in transit. Google processes this data under its own policies. Learn more:
+**Revoking access does not automatically delete redeem records or related data.** Data deletion is a separate process described in [Your choices and privacy requests](#choices).
+
+## 7. Advertising and privacy choices
+
+The Android game uses **Google AdMob / Google Mobile Ads SDK** and **Google User Messaging Platform (UMP)**. The current ad format is a full-screen interstitial after a match ends, when an ad is available and the display conditions are met. Ads are not guaranteed after every match; availability and service conditions vary. Testing builds may use test ads.
+
+According to [Google's Mobile Ads SDK data disclosure](https://developers.google.com/admob/android/privacy/play-data-disclosure), the SDK can collect and share:
+
+- **IP addresses**, which may be used to estimate a device's general location;
+- **identifiers**, including Android Advertising ID, App Set ID, and, where applicable, other identifiers associated with accounts signed in on the device;
+- **app and ad interactions**, such as app launches, taps, and ad or video views; and
+- **diagnostics**, including app launch time, hang rate, and energy usage.
+
+Google describes purposes including advertising and ad measurement, analytics, security, fraud prevention, and detecting invalid traffic. Approximate location inferred from an IP address is different from GPS location. Metro Mogul does not request or collect precise GPS location.
+
+**Your ad privacy choices:**
+
+- UMP may show consent or privacy messages depending on your region and configuration.
+- **Ad privacy choices** is available in the game's Settings when UMP reports that this option is required.
+- You can manage your Advertising ID through Android settings; controls and wording vary by device and Android version.
+- Declining ad personalization does not automatically stop all ads, transmission of IP addresses, or necessary data processing. There is no game control that disables all SDK diagnostics or collection.
+
+LightTerm Studio has not intentionally integrated a separate analytics service in the game at present. The advertising SDK can still perform its own measurement and analytics.
+
+For details about Google's processing and controls, see:
 
 - [Google Privacy Policy](https://policies.google.com/privacy)
 - [How Google uses information from sites or apps that use its services](https://policies.google.com/technologies/partner-sites)
-- [How Google uses advertising technologies](https://policies.google.com/technologies/ads)
+- [Google advertising technologies](https://policies.google.com/technologies/ads)
+- [Google Mobile Ads SDK: Play data disclosure](https://developers.google.com/admob/android/privacy/play-data-disclosure)
 
-**Your choices:**
+## 8. Google Play purchases
 
-- **Consent message:** When required for your region and our ad settings, Metro Mogul shows a privacy or consent message before personalized ads are used.
-- **Changing your choice:** When required, you can reopen your choices at any time from **Settings → Ad privacy choices** in the game.
-- **Device settings:** On Android, you can reset or delete your advertising ID, or opt out of ad personalization, in your device settings. This is usually under Settings → Privacy → Ads, but the wording varies by device and Android version.
-- **What declining means:** Declining personalized ads does not remove all ads or stop all data processing. You may still see non-personalized ads, and Google may still process some data for purposes such as delivering and measuring ads, limiting how often you see them, and preventing fraud.
-- **Regional differences:** The choices offered and the ads shown can vary by region.
+Purchases of maps and theme packs are optional. **Google Play Billing** handles payments. LightTerm Studio does not receive card numbers, bank account credentials, or payment passwords.
 
-We do not run a separate analytics service in Metro Mogul. However, the ad SDK may perform measurement and analytics as described above.
+The game and server can process product IDs, purchase status, purchase tokens or receipts, and entitlements. Purchase evidence can be sent to the server and checked through the Google Play Developer API, particularly to verify premium map access when you are the room leader. We use ownership information to unlock content, restore purchases, and prevent forged purchase evidence.
 
-## 7. In-app purchases
+For an online premium map, the room leader needs access; joining players can play that map without purchasing it themselves.
 
-When in-app purchases are available, you may be able to buy digital content such as premium maps or cosmetic theme packs through **Google Play Billing**.
+Deleting local or developer-held data does not automatically refund a purchase or remove transaction records held by Google. Refunds follow Google Play's processes and policies. Google's processing is described in the [Google Privacy Policy](https://policies.google.com/privacy).
 
-- **Google Play handles payment.** Metro Mogul does not receive or store your card number or other payment credentials.
-- **What we process:** To give you your content and restore it later, the game and our servers may process the product ID, purchase status, purchase token or receipt, and information about which content you own. To verify purchases, such as premium maps, our server may check the purchase with Google using the Google Play Developer API.
-- **Refunds:** Google Play handles refunds under its own policies. Deleting your game data or account does not automatically give you a refund. It also does not delete the purchase records that Google keeps.
+## 9. Support communications
 
-Google's handling of payment information is described in the [Google Payments Privacy Notice](https://payments.google.com/payments/apis-secure/u/0/get_legal_document?ldo=0&ldt=privacynotice) and the [Google Privacy Policy](https://policies.google.com/privacy).
+If you voluntarily email [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com), we receive your email address and message contents to handle questions, bugs, or privacy requests. This external email correspondence is separate from the game: the app does not offer email login.
 
-## 8. Support communications
+**Do not send passwords, session tokens, content access tokens, full purchase tokens, card numbers, or other secrets.** We do not require these as a condition of a privacy request.
 
-If you email us at lightdevs2005@gmail.com, we receive your email address and whatever you choose to include, such as questions, bug reports, or privacy requests. We use this to reply and to fix problems.
+## 10. How information is used
 
-**Never send us** your password, session tokens, or payment card details. We will not ask for them. We may ask for limited information to confirm that an account belongs to you (see Section 12).
+Information is used to:
 
-## 9. How information is used
+- run the game and remember local preferences and progress;
+- recognize Guest sessions, support reconnection, and operate online rooms and matches;
+- grant, verify, maintain, and restore content access through purchases or redeem codes;
+- display ads and manage ad privacy choices through Google;
+- protect services, limit excessive requests, and prevent abuse or fraudulent access;
+- provide support and respond to privacy requests; and
+- meet applicable legal obligations.
 
-We use information to:
+## 11. Who receives information
 
-- run the game and save your settings and progress
-- provide accounts, sign-in, and cloud saves when you use them
-- run online rooms and matches
-- give you purchased content and restore it
-- show ads and manage your privacy choices through Google
-- protect our services, for example by limiting excessive requests and preventing sign-in abuse
-- answer your messages and handle your requests
-- comply with legal obligations
+- **LightTerm Studio**, as operator, processes information needed to run the game and its services, including restricted administrative access to redeem records.
+- **Google** processes information for AdMob, UMP, Play Billing, and purchase verification as described above and under its own policies.
+- **Hosting and infrastructure providers** process information on our behalf to run online services. These services currently use a **Hostinger VPS**.
+- **Other players in your room** receive only information needed for the match, such as your name, character, status, and game actions, not session tokens or purchase evidence.
+- **Authorities** may receive information when required by law or lawfully necessary to address abuse, fraud, or security issues.
 
-## 10. When information is shared
+Some regional privacy laws define "sale" or "sharing" broadly, and advertising-related processing may fall within those definitions depending on the circumstances. We do not make a blanket legal classification of personalized advertising. The ad privacy options described above may help you manage relevant choices where available.
 
-We share information only in the following cases:
+## 12. Retention and backups
 
-| Recipient | What | Why |
-|---|---|---|
-| **Google** | Data processed by the Mobile Ads SDK and User Messaging Platform, plus purchase information and purchase checks through Google Play | Ads, privacy choices, payments, and purchase verification |
-| **Other players in your room** | Display name, character, game status, and in-game actions | So the match can be played |
-| **Hosting or infrastructure providers**, if we use them | Data stored on or passing through our servers | To run our online services on our behalf |
-| **Authorities or other parties** | Information needed to respond | When required by law, or when needed to deal with abuse, fraud, or security issues, as applicable law allows |
+Retention considers service operation, recovery, support, security, and legal obligations. Where no fixed period has been established, we do not promise a specific deletion deadline.
 
-**Sale and sharing:** We do not sell our account database. However, some privacy laws, including some US state laws, define "selling" or "sharing" broadly enough to cover ad SDKs such as AdMob, especially when they are used for personalized ads. Where those laws apply, you can use the ad privacy choices in the game, when available, and your device's ad settings to limit personalized advertising.
+- **Local data** remains until deleted, overwritten, or removed by clearing app data. Device backup mechanisms may retain or restore copies and affect removal.
+- **Online data and content access records**, including required session, match, entitlement, and redeem data, are stored in the database. Database backups can retain copies for service recovery.
+- **Guest sessions** currently have a validity period of approximately **30 days**. **Rooms** can expire after approximately **6 hours of inactivity**. These are access and recovery-eligibility rules, not guarantees that all database copies, backups, or related records are deleted at those times.
+- **Room and session cleanup** occurs during certain service operations. We do not promise precisely timed deletion by a scheduled job.
+- **Redeem records** do not currently have an established automatic deletion schedule.
+- **Database backups** do not currently have a fixed retention schedule that we can promise. Backup copies must be considered when handling deletion requests.
+- **Support emails** are retained according to support, recordkeeping, security, and legal needs; no fixed retention period is currently specified.
+- **Data held by Google** follows Google's policies and your Google settings.
 
-## 11. Data retention
+## 13. Your choices and privacy requests
 
-How long data is kept depends on its type:
+To request access to, correction of, or deletion of developer-held data, email [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com) with the suggested subject **"Metro Mogul Privacy Request"**.
 
-- **Data on your device:** Saves and settings stay on your device until you delete or overwrite them, or clear the app's data. Uninstalling the app usually removes them. However, device or cloud backups may keep or restore copies.
-- **Account and cloud save data:** Stored on our servers until it is deleted, for example after a deletion request (see Section 12). We do not currently have an automatic deletion schedule.
-- **Online rooms and sessions:** Room and session information is currently held in server memory and is cleared when a server restarts. When a session expires or a room closes, that does not mean all related data, such as your account or cloud save, is deleted.
-- **Support emails:** Kept as long as needed to handle your request and keep a record of it.
-- **Data processed by Google:** Kept according to Google's own policies and your Google settings.
+Explain your request and provide your player name and available nonsecret details that may help locate records, such as the approximate time of a redemption or room activity. A player name alone may not identify the data owner. We may need proportionate verification and may not always be able to locate or verify records from the information provided. We will not ask for passwords, session tokens, access tokens, full purchase tokens, card numbers, or other confidential credentials.
 
-## 12. Your choices and deletion requests
+Please keep these distinctions in mind:
 
-You can:
+- Uninstalling the app or clearing device data does not automatically delete server database records or data held by Google. Device backups may also retain copies.
+- Leaving a room does not delete all related data.
+- Revoking redeem access does not delete redeem records or related data.
+- Deleting developer-held data does not automatically delete Google purchases or give you a refund.
+- Backup copies need to be considered as part of a deletion request. If some data must be retained for a lawful reason, we will explain the reason in responding to your request as applicable law requires.
 
-- **Play without an account:** Single Player, Tutorial, and Pass & Play work as a Guest.
-- **Delete local data:** Clear the app's data or storage in your device settings, or uninstall the app. This does not delete your cloud save, data held by Google, or data on other players' devices.
-- **Sign out or leave a room:** Signing out ends your session on that device but does **not** delete your account.
-- **Manage ad privacy:** Use Settings → Ad privacy choices, when available, and your device's ad settings (Section 6).
-- **Ask us to access, correct, or delete data:** Email lightdevs2005@gmail.com. Tell us what you want, and include your account email or display name if your request is about an account.
+Privacy requests are handled through email; there is no in-app self-service deletion button or automatic deletion endpoint currently offered. We do not promise a fixed completion time that has not been established.
 
-There is currently no in-app button to delete your account yourself. To delete your account and cloud save, email us. Before we act on a request, we may ask you to confirm that the account is yours, using only the information needed for that check. Deleting your account or data does not automatically give you a refund (see Section 7).
+Depending on your location and applicable law, you may have additional rights to receive a copy of your data, object to or restrict processing, withdraw consent, or complain to a data protection authority. Contact us to discuss your request. You can also manage advertising choices as described in [Advertising and privacy choices](#ads).
 
-**Legal rights:** Depending on where you live and which laws apply, you may have rights over your personal data. These can include the right to access, correct, delete, or receive a copy of it, to object to or restrict some uses, and to withdraw consent. Examples of such laws include the GDPR in the EU, the UK GDPR, Swiss data protection law, and some US state privacy laws. Which rights apply, and how, depends on your location and the law. You may also be able to complain to your local data protection authority. Contact us and we will respond as the applicable law requires.
+## 14. Children and intended age group
 
-## 13. Children's privacy
+LightTerm Studio's currently stated target audience for Metro Mogul is **players aged 13 and older**. The game is not presented as child-directed. This stated audience does not itself establish compliance with children's privacy, consent, or Google Play Families requirements.
 
-Metro Mogul is intended for players aged 13 and older. It is not directed to children under 13, and we do not knowingly collect personal information from children under 13.
+If you are a parent or guardian with concerns about a child's information in connection with Metro Mogul, contact [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com). Describe your concern using nonsecret information so we can assess it and discuss appropriate steps under applicable law.
 
-In some countries, the minimum age to agree to the online processing of your personal data is higher than 13. If you are under that age where you live, ask a parent or guardian before creating an account, playing online, or making a purchase.
+## 15. Security
 
-If you are a parent or guardian and believe a child under 13 has given us personal information, for example by creating an account or emailing us, contact us at lightdevs2005@gmail.com. We will delete it.
+Production services use **HTTPS and WSS**, and production database connections use **TLS**. Administrative access is restricted. Guest session credentials and the entitlement cache use encrypted storage on the device.
 
-## 14. Security
+These measures do not mean all stored data is encrypted or that communications are end-to-end encrypted. No security measure guarantees complete protection against unauthorized access, disclosure, or loss. Local developer tests may use different local connections; those tests do not describe the production connections used by players.
 
-Our security measures include:
+## 16. International processing
 
-- Account passwords are stored as salted hashes, not in plain text.
-- Session credentials on your device are kept in encrypted storage.
-- The app requires secure HTTPS connections for remote sign-in and for sending purchase receipts.
+Google and our hosting or other infrastructure providers may process information across countries, including countries other than where you live. Data protection laws may differ between those countries.
 
-Not every connection is encrypted. For example, local network (LAN) testing of Guest multiplayer may use unencrypted HTTP. No system is 100% secure, and we cannot guarantee that information will never be accessed, disclosed, or lost without permission.
+## 17. Third-party services and links
 
-## 15. International processing
+Google and other providers have their own privacy policies for their processing. Ads or external links may take you to services we do not control. Their policies do not replace this policy, and this policy does not replace theirs.
 
-Google and other service providers may process information in countries other than yours, under their own policies and safeguards. This means your information may be handled under laws different from those where you live.
+## 18. Changes to this policy
 
-## 16. Third-party services and links
+We will update this policy to reflect changes to the game or our data practices and revise the "Last updated" date. Please review this page for the current policy.
 
-Metro Mogul uses services from Google, including AdMob, the User Messaging Platform, and Google Play Billing. Google's policies cover how Google uses data. Ads may link to websites or apps that we do not control, and their privacy practices are their own. Google's policies do not replace this policy, and this policy does not replace theirs.
-
-## 17. Changes to this policy
-
-We will update this policy when the game, its features, or our data practices change, for example when we add or remove services or SDKs. We will update the "Last updated" date at the top. If we make important changes, we will make reasonable efforts to let you know, for example in the game or on our store listing.
-
-## 18. Contact
+## 19. Contact
 
 **LightTerm Studio**
-Email: [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com)
+
+Privacy and support: [lightdevs2005@gmail.com](mailto:lightdevs2005@gmail.com)
